@@ -78,13 +78,11 @@ public class Main {
         String[] s3={"a","d","c"};
         System.out.println(s2[0]+"-"+s3[0]+","+s2[1]+"-"+s3[1]+","+s2[2]+"-"+s3[2]);
         System.out.println();
+        int s=10;
+        if (s<15){
+            System.out.println("Условие вып");
+        }else {System.out.println("Условие noвып");
+            System.out.println("End");
 
-
-
-
-
-
-
-
-    }
+    }}
 }
