@@ -30,16 +30,52 @@ public class Main2 {
     int s=10;
     while (s < 15)
     {
-        System.out.println("s is" + s);
+        System.out.println("s is"+" " + s);
         s=s+1;
     }
         while (true)
         {
-         if (s>15)
-         {
-            break;
-         }
+            if (s>15)
+            {
+                break;
+            }
             s=s+1;
         }
+        if (s > s) {
+            System.out.println("s greater s");
+        } else if (s < s) {
+            System.out.println("s less s");
+        } else {
+            System.out.println("other");
+        }
+        if (false)
+        {
+            System.out.println("hi there");
+        }
+        int n=20;
+        int b=n+5;
+        while (n > 0)
+        {
+            System.out.println("Recycle " + b);
+            n = n - 10;
+        }
+        boolean pereryv = true;
+        boolean luchshe = false;
+        if (!luchshe && pereryv) {
+            System.out.println("Перерьіву не бьіть.");
+        } else if (!(luchshe && pereryv)) {
+            System.out.println("Перерьіву бьіть.");
+        }
+        boolean URLboolean = false;
+        Stirng URL = "";
+        if URL != ""
+        {
+            URLboolean = true;}
+
+
+
+
+
+
     }
 }
