@@ -7,39 +7,34 @@ public class Main2 {
     public static void main(String[] args) {
         //System.out.println(args[0]);
         //Если первый элемпент арг равен Хелло-напечатать  в консоль Класс, иначе напечатать Гуд бай
-        if (args[0].equals("Hello"))
-        {
+        if (args[0].equals("Hello")) {
             System.out.println("Class");
         } else {
             System.out.println("Good-bye");
-       }
-        if(args[0].equals("Hello"))
-      {
-          System.out.println("Success");
-      } else {
+        }
+        if (args[0].equals("Hello")) {
+            System.out.println("Success");
+        } else {
             System.out.println("Success");
         }
-           if(args[1].equals("Class"))
+        if (args[1].equals("Class"))
 
         {
-        System.out.println("Success");
-        }
-        else {System.out.println("Good-bye");
+            System.out.println("Success");
+        } else {
+            System.out.println("Good-bye");
         }
 
-    int s=10;
-    while (s < 15)
-    {
-        System.out.println("s is"+" " + s);
-        s=s+1;
-    }
-        while (true)
-        {
-            if (s>15)
-            {
+        int s = 10;
+        while (s < 15) {
+            System.out.println("s is" + " " + s);
+            s = s + 1;
+        }
+        while (true) {
+            if (s > 15) {
                 break;
             }
-            s=s+1;
+            s = s + 1;
         }
         if (s > s) {
             System.out.println("s greater s");
@@ -48,14 +43,12 @@ public class Main2 {
         } else {
             System.out.println("other");
         }
-        if (false)
-        {
+        if (false) {
             System.out.println("hi there");
         }
-        int n=20;
-        int b=n+5;
-        while (n > 0)
-        {
+        int n = 20;
+        int b = n + 5;
+        while (n > 0) {
             System.out.println("Recycle " + b);
             n = n - 10;
         }
@@ -66,11 +59,34 @@ public class Main2 {
         } else if (!(luchshe && pereryv)) {
             System.out.println("Перерьіву бьіть.");
         }
-        boolean URLboolean = false;
-        Stirng URL = "";
-        if URL != ""
+    }}
+        //oolean URLboolean = false;
+        //Stirng URL = "";
+        //if URL != ""
+       // {
+          //  URLboolean = true;}
+        /*int i=0;
+        while (i<5)
         {
-            URLboolean = true;}
+            i=i+1;
+            System.out.println(i);
+        }
+        System.out.println(i);
+        String f ="f";
+        for(int j=0; j<5; j=j+1)
+        {
+            System.out.println(j);
+        }
+        if (f.equals("error"))
+        {
+            break;
+        }
+        System.out.println("Hello");
+        if (f.equals("error"))
+        {
+            continue;
+        }
+       /* System.out.println("Hello");
 
 
 
@@ -78,4 +94,4 @@ public class Main2 {
 
 
     }
-}
+}*/
