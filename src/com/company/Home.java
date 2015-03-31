@@ -16,8 +16,8 @@ public class Home {
         System.out.println();
         System.out.println(u[3 - 1]);
         System.out.println();
-        //int x=8;
-        for (int x = 8; x < 11; x++) {
+        int x=8;
+        for (; x < 11; x++) {
             System.out.println(x);
         }
         String[] s = {"How", "are", "you"};
