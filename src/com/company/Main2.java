@@ -59,7 +59,7 @@ public class Main2 {
         } else if (!(luchshe && pereryv)) {
             System.out.println("Перерьіву бьіть.");
         }
-    }}
+
         //oolean URLboolean = false;
         //Stirng URL = "";
         //if URL != ""
@@ -95,3 +95,10 @@ public class Main2 {
 
     }
 }*/
+        String a = "Hello Class";
+        System.out.println(a);
+
+
+}
+
+}
