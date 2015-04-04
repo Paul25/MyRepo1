@@ -4,6 +4,7 @@ package com.company;
  * Created by XPS on 31.03.2015.
  */
 public class ProDoor {
+
     public int height;
     public int width;
     public boolean isOpened;
