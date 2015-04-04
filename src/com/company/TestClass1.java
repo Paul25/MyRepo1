@@ -9,7 +9,9 @@ public class TestClass1 {
 
         TestClass c = new TestClass();
         c.say();
-        c.update();
+        c.update("Goodbye World");
+        c.say();
+
 
 
     }
