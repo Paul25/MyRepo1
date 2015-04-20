@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(JUnit4.class)
-public class Shortcom
+public class Xpath
 {
     public WebDriver dr;
     public void mas(String master)
@@ -25,11 +25,11 @@ public class Shortcom
     public void mysite (String site)
     {
         dr.findElement(By.name("site")).sendKeys(site);
-            }
+    }
     public void sentkey ()
     {
         dr.findElement(By.name("site")).sendKeys(Keys.ENTER);
-            }
+    }
     /*
     dr.findElement(By.name("site")).sendKeys(Keys."Generate");
     */
@@ -80,36 +80,19 @@ public class Shortcom
         mas("");
         mysite ("missile2013@yandex.ru");
         generate();
-      /*
-        dr.findElement(By.name("master")).sendKeys("");
-        dr.findElement(By.name("site")).sendKeys("missile2013@yandex.ru");
-        dr.findElement(By.name("password")).getAttribute("value");
-        String s=dr.findElement(By.name("password")).getAttribute("value");
-       */
         System.out.println(passwrd());
         Assert.assertEquals("Password generator",dr.getTitle());
-        //Thread.sleep(5000);
-        //dr.quit();
-    }
+         }
     @Test
     public void test5() throws InterruptedException {
         mas("12345678");
         mysite ("");
         generate();
-
-       /*
-        dr.findElement(By.name("master")).sendKeys("12345678");
-        dr.findElement(By.name("site")).sendKeys("");
-        dr.findElement(By.name("password")).getAttribute("value");
-        String s=dr.findElement(By.name("password")).getAttribute("value");
-       */
         System.out.println(passwrd());
         Assert.assertEquals("Password generator",dr.getTitle());
-        //Thread.sleep(5000);
-        //h.quit();
     }
 
-        @Test
+    @Test
     public void test6(){
         List<WebElement> list = new ArrayList<WebElement>();
         list = dr.findElements(By.tagName("input"));
@@ -117,7 +100,7 @@ public class Shortcom
         System.out.println(passwrd());
         Assert.assertEquals("Test failed!!!","BaefBs8/Z/cm2@1a", passwrd());
     }
-       @Test
+    @Test
     public void test7(){
         String str = "";
         for (int i = 0; i < 200; i++) {
