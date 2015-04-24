@@ -4,6 +4,8 @@ package com.company;
  * Created by XPS on 20.04.2015.
  */
 public class JavaRash {
+
+    /*//1
     public static int min(int a, int b, int c, int d)
     {
         int m = min(a, b);
@@ -22,6 +24,7 @@ public class JavaRash {
         else m2 = b;
         return m2; //Напишите тут ваш код
     }
+    //2
    public static void printN(String s1) {
         for (int i = 0; i < 5; i++) {
             for (int j = 0; j < 10; j++) {
@@ -29,22 +32,12 @@ public class JavaRash {
 
                 System.out.print(s1 + " ");
             }
-            System.out.println();
-        }
-   }
-/*
-
-        int j = 0;
-        for (int i = 0; i < 5; i++)
-            for (j; j < 10; j++)
-                System.out.print(s1 + " " ); // но в конце у тебя будет пробел
-        j = 0;
-*/
-
+            System.out.println();}}*/
 
 
     public static void main(String[] args) throws Exception
     {
+        /*//1
         if (min(5, 8, 6, 6) != 5)
         {
             System.out.println("1) Неправильно для a"); //вывод=5
@@ -74,27 +67,28 @@ public class JavaRash {
             System.out.println("7) Неправильно для равных двух пар"); //вывод=5
         }
 
-
+        //3
         { String s="MAY 6 1983";
             System.out.println("I was born "+s);
         }
 
+        //2
         printN("Pasha");
-        //Вывести на экран произведение 10 чисел от 1 до 10. Результат - 1 число.
+        //4 Вывести на экран произведение 10 чисел от 1 до 10. Результат - 1 число.
         //Подсказка: будет три миллиона с хвостиком.
         int mp=1;
         for(int i1=1; i1<=10; i1++)
         {
          mp=mp*i1;
         }System.out.println(mp);
-        /*Сумма 10 чисел
+        //5
+        *//*Сумма 10 чисел
         Вывести на экран сумму чисел от 1 до 10 построчно:
         1
         1+2=3
         1+2+3=6
         1+2+3+4=10
-        */
-
+        *//*
         int mp1=1;
         for(int i2=2; i2<=10; i2++)
         {
@@ -102,13 +96,13 @@ public class JavaRash {
             mp1=mp1+i2;
 
         }
-        /* Мама мыла раму
-Вывести на экран все возможные комбинации слов «Мама», «Мыла», «Раму».
-Подсказка: их 6 штук. Каждую комбинацию вывести с новой строки. Слова не разделять. Пример:
-МылаРамуМама
-РамуМамаМыла
-...
-*/
+        *//* //6 Мама мыла раму
+             Вывести на экран все возможные комбинации слов «Мама», «Мыла», «Раму».
+             Подсказка: их 6 штук. Каждую комбинацию вывести с новой строки. Слова не разделять. Пример:
+             МылаРамуМама
+             РамуМамаМыла
+             ...
+
         String s="Мама";
         String s1="Мыла";
         String s2="Раму";
@@ -122,13 +116,15 @@ public class JavaRash {
                 }
             }
         }
-        /* Таблица умножения
-Выведи на экран таблицу умножения 10 на 10 в следующем виде:
-1 2 3 …
-2 4 6 …
-3 6 9 …
-…
-*/
+        *//*
+        //7
+        *//* Таблица умножения
+       Выведи на экран таблицу умножения 10 на 10 в следующем виде:
+        1 2 3 …
+         2 4 6 …
+        3 6 9 …
+        …
+         *//*
         int f=1;
         int r=1;
         for(int i1=1; i1<=10; i1++)
@@ -141,10 +137,55 @@ public class JavaRash {
             }
             System.out.println();
         }
+        //8
+        String a="It's Windows path:";
+        String a1="C:\\Program Files\\Java\\jdk1.7.0\\bin";
+        String a2="\"";
+        String b="It's Java string:";
+        String b1="\\C:\\\\Program Files\\\\Java\\\\jdk1.7.0\\\\bin\\";
+        String b2="\"";
+        String b3="\\";
+        *//*
+        char sb="It's Windows path: "C:\Program Files\Java\jdk1.7.0\bin"";
+        char sb1="It's Java string: \"C:\\Program Files\\Java\\jdk1.7.0\\bin\"";
+        String s3=charachter.toString(sb);
+        String s4=charachter.toString(sb);
+        System.out.println(s3);
+        System.out.println(s4)*//*;
+        String s5  = "C:\\Program Files\\Java\\jdk1.7.0_45\\bin\\java.exe";
+        System.out.println(a+" "+a2+a1+a2);
+        System.out.println(b+" "+b2+b3+b1+b2);*/
+
+
+        //9
+
+        String rainbow[] = {"красный", "оранжевый", "желтый", "зеленый", "голубой", "синий", "фиолетовый"};
+        String rainbow1[] = {"КРАСНЫЙ", "ОРАНЖЕВЫЙ", "ЖЕЛТЫЙ", "ЗЕЛЕНЫЙ", "ГОЛУБОЙ", "СИНИЙ", "ФИОЛЕТОВЫЙ"};
+        for (int i = 0; i < 3; i++)
+        {
+            System.out.print(rainbow[i] + " ");
+        }
+        System.out.println();
+        for (int i = 3; i < 6; i++)
+        {
+            System.out.print(rainbow[i] + " ");
+        }
+        System.out.println();
+        System.out.println(rainbow[6]);
+        System.out.print("красный"+" ");
+        System.out.print("оранжевый"+" ");
+        System.out.println("желтый");
+        System.out.print("зеленый"+" ");
+        System.out.print("голубой"+" ");
+        System.out.println("синий");
+        System.out.print("фиолетовый");
+
+
 
 
     }
 }
+
 
 
 
