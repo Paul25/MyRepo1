@@ -15,36 +15,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @RunWith(JUnit4.class)
-public class Xpath
+public class WithPageObject
 {
     public WebDriver dr;
-    public void mas(String master)
-    {
-        WebElement mstr=dr.findElement(By.xpath("//td[text()='Your master password']/following::input[1]"));
-        mstr.clear();
-        mstr.sendKeys(master);
-    }
-    public void mysite (String site)
-    {
-        WebElement st=dr.findElement(By.xpath("//td[text()='Site name']/following::input[1]"));
-        st.clear();
-        st.sendKeys(site);
-    }
-    /*public void sentkey ()
-    {
-         dr.findElement(By.xpath("//td[text()='Site name']/following::input[1]").sendKeys(Keys.ENTER));
-    }*/
-    /*
-    dr.findElement(By.name("site")).sendKeys(Keys."Generate");
-    WebElement pasha= dr.findElement(By.xpath("//input[@type='submit']"));//td[text()='Site name']/following::input[1]
-    */
-    public String passwrd() {WebElement ps=dr.findElement(By.xpath("//td[text()='Generated password']/following::input[1]"));
-        return ps.getAttribute("value");
-    }
-    public void generate(){
-        WebElement list =  dr.findElement(By.xpath("//input[@value='Generate']"));
-        list.click();
-    }
 
     @Before
     public void qwerty()
@@ -64,10 +37,10 @@ public class Xpath
     }
 
     @Test
-    public void test3() throws InterruptedException {
-        mas("12345");
-        mysite ("p@m.ua");
-        generate();
+    public void test3() throws InterruptedException
+    {
+        PageObject.setField("12345", "p@m.ua");
+        PageObject.generate();
         /*
         dr.findElement(By.name("master")).sendKeys("12345678");
         dr.findElement(By.name("site")).sendKeys("missile2013@yandex.ru");
@@ -75,114 +48,125 @@ public class Xpath
         dr.findElement(By.name("password")).getAttribute("value");
         String s=dr.findElement(By.name("password")).getAttribute("value");
         */
-        System.out.println(passwrd());
-        Thread.sleep(5000);
-        Assert.assertEquals("Test passed","tPcfS2OZ1a",passwrd());
+        System.out.println(PageObject.passwrd());
+        Thread.sleep(3000);
+        Assert.assertEquals("Test passed","tPcfS2OZ1a",PageObject.passwrd());
     }
 
     @Test
-    public void test4() throws InterruptedException {
-        mas("");
-        mysite ("p@m.ua");
-        generate();
-        System.out.println(passwrd());
+    public void test4() throws InterruptedException
+    {
+        PageObject.setField("", "p@m.ua");
+        PageObject.generate();
+        System.out.println(PageObject.passwrd());
+        Thread.sleep(3000);
         Assert.assertEquals("Password generator",dr.getTitle());
-         }
+    }
     @Test
-    public void test5() throws InterruptedException {
-        mas("12345");
-        mysite ("");
-        generate();
-        System.out.println(passwrd());
+    public void test5() throws InterruptedException
+    {
+        PageObject.setField("12345", "");
+        PageObject.generate();
+        System.out.println(PageObject.passwrd());
         Thread.sleep(3000);
         Assert.assertEquals("Password generator",dr.getTitle());
     }
 
     @Test
-    public void test6(){
+    public void test6() throws InterruptedException
+    {
         List<WebElement> list = new ArrayList<WebElement>();
         list = dr.findElements(By.xpath("//input[@value='Generate']"));
         list.get(2).click();
-        System.out.println(passwrd());
-        Assert.assertEquals("Test failed!!!","BaefBs8/Z/cm2@1a", passwrd());
+        System.out.println(PageObject.passwrd());
+        Thread.sleep(3000);
+        Assert.assertEquals("Test failed!!!","BaefBs8/Z/cm2@1a", PageObject.passwrd());
     }
     @Test
-    public void test7(){
+    public void test7() throws InterruptedException
+    {
         String str = "";
         for (int i = 0; i < 200; i++)
             str = str + 1;
-        mas(str);
-        mysite(str);
-        generate();
-        System.out.println(passwrd());
-        Assert.assertEquals("Test failed!!!","aR8ztwNBbSqe5@1a", passwrd());
+        PageObject.setField(str, str);
+        PageObject.generate();
+        System.out.println(PageObject.passwrd());
+        Thread.sleep(3000);
+        Assert.assertEquals("Test failed!!!","aR8ztwNBbSqe5@1a", PageObject.passwrd());
     }
     @Test
-    public void test8(){
+    public void test8() throws InterruptedException
+    {
 
-        mas("/';*&#&$@^!_...\\n");
-        mysite("/';*&#&$@^!_...\\n");
-        generate();
-        System.out.println(passwrd());
-        Assert.assertEquals("Test failed!!!","ctolW6AdI0te1@1a", passwrd());
+        PageObject.setField("/';*&#&$@^!_...\\n", "/';*&#&$@^!_...\\n");
+        PageObject.generate();
+        System.out.println(PageObject.passwrd());
+        Thread.sleep(5000);
+        Assert.assertEquals("Test failed!!!","ctolW6AdI0te1@1a", PageObject.passwrd());
     }
     @Test
-    public void test9(){
+    public void test9()
+    {
 //        List<WebElement> list = new ArrayList<WebElement>(dr.findElements(By.tagName("input")));
         //input[@type='submit']
         WebElement pasha= dr.findElement(By.xpath("//input[@type='submit']"));
 //        String title = list.get(2).getAttribute("value");
         //String title = pasha.getAttribute("value");
 
-        try {
+        try
+        {
             Thread.sleep(5000);
-        } catch (InterruptedException e) {
+        } catch (InterruptedException e)
+        {
             e.printStackTrace();
         }
         Assert.assertEquals("Test failed!!!","Generate", pasha.getAttribute("value"));
     }
     @Test
-    public void test10(){
-        mas("/';*&#&$@^!_...\\n");
-        mysite("/';*&#&$@^!_...\\n");
-        generate();
+    public void test10()
+    {
+        PageObject.setField("/';*&#&$@^!_...\\n", "/';*&#&$@^!_...\\n");
+        PageObject.generate();
         Assert.assertEquals("/';*&#&$@^!_...\\n", dr.findElement(By.name("master")).getAttribute("value"));
     }
     @Test
-    public void test11(){
-        mas("/';*&#&$@^!_...\\n");
-        mysite("/';*&#&$@^!_...\\n");
-        generate();
+    public void test11()
+    {
+        PageObject.setField("/';*&#&$@^!_...\\n", "/';*&#&$@^!_...\\n");
+        PageObject.generate();
         Assert.assertEquals("Master is not editable",true, dr.findElement(By.name("master")).isEnabled());
     }
     @Test
-    public void test12(){
-        mas("12345");
-        mysite("p@m.ua");
-        generate();
+    public void test12()
+    {
+        PageObject.setField("12345", "p@m.ua");
+        PageObject.generate();
         Assert.assertEquals("Site is not editable",true, dr.findElement(By.name("site")).isEnabled());
     }
     @Test
-    public void test13(){
-        mas("12345");
-        mysite("p@m.ua");
-        generate();
+    public void test13()
+    {
+        PageObject.setField("12345", "p@m.ua");
+        PageObject.generate();
         Assert.assertEquals("Password is not editable",true, dr.findElement(By.name("password")).isEnabled());
     }
     @Test
-    public void test14(){
+    public void test14()
+    {
         List<WebElement> list = new ArrayList<WebElement>(dr.findElements(By.tagName("td")));
         String title = list.get(0).getText();
         Assert.assertEquals("Test failed!!!","Your master password", title);
     }
     @Test
-    public void test15(){
+    public void test15()
+    {
         List<WebElement> list = new ArrayList<WebElement>(dr.findElements(By.tagName("td")));
         String title = list.get(2).getText();
         Assert.assertEquals("Test failed!!!","Site name", title);
     }
     @Test
-    public void test16(){
+    public void test16()
+    {
         List<WebElement> list = new ArrayList<WebElement>(dr.findElements(By.tagName("td")));
         String title = list.get(5).getText();
         Assert.assertEquals("Test failed!!!","Generated password", title);
