@@ -24,7 +24,7 @@ public class PageObject
         mstr.clear();
         mstr.sendKeys(master);
     }
-    public void setSite (String site)
+    public static void setSite (String site)
     {
         WebElement st=dr.findElement(By.xpath("//td[text()='Site name']/following::input[1]"));
         st.clear();
@@ -37,7 +37,7 @@ public class PageObject
     }
     public static void generate()
     {
-        WebElement list =  dr.findElement(By.xpath("//input[@value='Generate']"));
+        WebElement list =dr.findElement(By.xpath("//input[@value='Generate']"));
         list.click();
     }
     public static void setField(String label, String val)

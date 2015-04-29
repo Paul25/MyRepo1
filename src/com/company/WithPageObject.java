@@ -17,29 +17,29 @@ import java.util.List;
 @RunWith(JUnit4.class)
 public class WithPageObject
 {
-    public WebDriver dr;
 
     @Before
     public void qwerty()
     {
 
         System.setProperty("webdriver.chrome.driver", "E:/Course/chromedriver_win32/chromedriver.exe");
-        dr = new ChromeDriver();
-        dr.manage().window().maximize();
-        dr.get("http://angel.net/~nic/passwd.sha1.1a.html");
+        PageObject.dr = new ChromeDriver();
+        PageObject.dr.manage().window().maximize();
+        PageObject.dr.get("http://angel.net/~nic/passwd.sha1.1a.html");
         //dr.get("http://oxogamestudio.com/passwd.current6.htm");
     }
 
     @After
     public void clean()
     {
-        dr.quit();
+        PageObject.dr.quit();
     }
 
     @Test
     public void test3() throws InterruptedException
     {
         PageObject.setField("12345", "p@m.ua");
+        Thread.sleep(5000);
         PageObject.generate();
         /*
         dr.findElement(By.name("master")).sendKeys("12345678");
@@ -49,7 +49,7 @@ public class WithPageObject
         String s=dr.findElement(By.name("password")).getAttribute("value");
         */
         System.out.println(PageObject.passwrd());
-        Thread.sleep(3000);
+        Thread.sleep(5000);
         Assert.assertEquals("Test passed","tPcfS2OZ1a",PageObject.passwrd());
     }
 
@@ -60,7 +60,7 @@ public class WithPageObject
         PageObject.generate();
         System.out.println(PageObject.passwrd());
         Thread.sleep(3000);
-        Assert.assertEquals("Password generator",dr.getTitle());
+        Assert.assertEquals("Password generator",PageObject.dr.getTitle());
     }
     @Test
     public void test5() throws InterruptedException
@@ -69,14 +69,14 @@ public class WithPageObject
         PageObject.generate();
         System.out.println(PageObject.passwrd());
         Thread.sleep(3000);
-        Assert.assertEquals("Password generator",dr.getTitle());
+        Assert.assertEquals("Password generator",PageObject.dr.getTitle());
     }
 
     @Test
     public void test6() throws InterruptedException
     {
         List<WebElement> list = new ArrayList<WebElement>();
-        list = dr.findElements(By.xpath("//input[@value='Generate']"));
+        list = PageObject.dr.findElements(By.xpath("//input[@value='Generate']"));
         list.get(2).click();
         System.out.println(PageObject.passwrd());
         Thread.sleep(3000);
@@ -109,7 +109,7 @@ public class WithPageObject
     {
 //        List<WebElement> list = new ArrayList<WebElement>(dr.findElements(By.tagName("input")));
         //input[@type='submit']
-        WebElement pasha= dr.findElement(By.xpath("//input[@type='submit']"));
+        WebElement pasha= PageObject.dr.findElement(By.xpath("//input[@type='submit']"));
 //        String title = list.get(2).getAttribute("value");
         //String title = pasha.getAttribute("value");
 
@@ -127,47 +127,47 @@ public class WithPageObject
     {
         PageObject.setField("/';*&#&$@^!_...\\n", "/';*&#&$@^!_...\\n");
         PageObject.generate();
-        Assert.assertEquals("/';*&#&$@^!_...\\n", dr.findElement(By.name("master")).getAttribute("value"));
+        Assert.assertEquals("/';*&#&$@^!_...\\n", PageObject.dr.findElement(By.name("master")).getAttribute("value"));
     }
     @Test
     public void test11()
     {
         PageObject.setField("/';*&#&$@^!_...\\n", "/';*&#&$@^!_...\\n");
         PageObject.generate();
-        Assert.assertEquals("Master is not editable",true, dr.findElement(By.name("master")).isEnabled());
+        Assert.assertEquals("Master is not editable",true, PageObject.dr.findElement(By.name("master")).isEnabled());
     }
     @Test
     public void test12()
     {
         PageObject.setField("12345", "p@m.ua");
         PageObject.generate();
-        Assert.assertEquals("Site is not editable",true, dr.findElement(By.name("site")).isEnabled());
+        Assert.assertEquals("Site is not editable",true, PageObject.dr.findElement(By.name("site")).isEnabled());
     }
     @Test
     public void test13()
     {
         PageObject.setField("12345", "p@m.ua");
         PageObject.generate();
-        Assert.assertEquals("Password is not editable",true, dr.findElement(By.name("password")).isEnabled());
+        Assert.assertEquals("Password is not editable",true, PageObject.dr.findElement(By.name("password")).isEnabled());
     }
     @Test
     public void test14()
     {
-        List<WebElement> list = new ArrayList<WebElement>(dr.findElements(By.tagName("td")));
+        List<WebElement> list = new ArrayList<WebElement>(PageObject.dr.findElements(By.tagName("td")));
         String title = list.get(0).getText();
         Assert.assertEquals("Test failed!!!","Your master password", title);
     }
     @Test
     public void test15()
     {
-        List<WebElement> list = new ArrayList<WebElement>(dr.findElements(By.tagName("td")));
+        List<WebElement> list = new ArrayList<WebElement>(PageObject.dr.findElements(By.tagName("td")));
         String title = list.get(2).getText();
         Assert.assertEquals("Test failed!!!","Site name", title);
     }
     @Test
     public void test16()
     {
-        List<WebElement> list = new ArrayList<WebElement>(dr.findElements(By.tagName("td")));
+        List<WebElement> list = new ArrayList<WebElement>(PageObject.dr.findElements(By.tagName("td")));
         String title = list.get(5).getText();
         Assert.assertEquals("Test failed!!!","Generated password", title);
     }
