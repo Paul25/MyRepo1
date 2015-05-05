@@ -21,7 +21,7 @@ public class PageObject
     public static void setMaster(String master)
     {
         WebElement mstr=dr.findElement(By.xpath("//td[text()='Your master password']/following::input[1]"));
-        mstr.clear();
+        //mstr.clear();
         mstr.sendKeys(master);
     }
     public static void setSite (String site)

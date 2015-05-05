@@ -38,7 +38,8 @@ public class WithPageObject
     @Test
     public void test3() throws InterruptedException
     {
-        PageObject.setField("12345", "p@m.ua");
+        PageObject.setMaster("12345");
+        PageObject.setSite("p@m.ua");
         Thread.sleep(5000);
         PageObject.generate();
         /*
