@@ -1,10 +1,9 @@
 <component name="libraryTable">
   <library name="libs">
     <CLASSES>
-      <root url="file://E:/Course/selenium-java-2.44.0/selenium-2.44.0/libs" />
+      <root url="file://C:/For Idea/chromedriver_win32" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
-    <jarDirectory url="file://E:/Course/selenium-java-2.44.0/selenium-2.44.0/libs" recursive="false" />
   </library>
 </component>

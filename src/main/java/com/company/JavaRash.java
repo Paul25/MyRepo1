@@ -1,5 +1,7 @@
 package com.company;
 
+import static java.lang.System.*;
+
 /**
  * Created by XPS on 20.04.2015.
  */
@@ -35,8 +37,7 @@ public class JavaRash {
             System.out.println();}}*/
 
 
-    public static void main(String[] args) throws Exception
-    {
+    public static void main(String[] args) throws Exception {
         /*//1
         if (min(5, 8, 6, 6) != 5)
         {
@@ -96,27 +97,38 @@ public class JavaRash {
             mp1=mp1+i2;
 
         }
-        *//* //6 Мама мыла раму
+        */
+        /* //6 Мама мыла раму
              Вывести на экран все возможные комбинации слов «Мама», «Мыла», «Раму».
              Подсказка: их 6 штук. Каждую комбинацию вывести с новой строки. Слова не разделять. Пример:
              МылаРамуМама
              РамуМамаМыла
-             ...
+             */
+     /*
 
-        String s="Мама";
-        String s1="Мыла";
-        String s2="Раму";
-        String[] text ={"Мама", "Мыла", "Раму"};
+        String s = "Мама";
+        String s1 = "Мыла";
+        String s2 = "Раму";
+        String[] text = {"Мама", "Мыла", "Раму"};
         int n = text.length;
         for (int i1 = 0; i1 < n; i1++) {
             for (int i2 = 0; i2 < n; i2++) {
                 for (int i3 = 0; i3 < n; i3++) {
-                    if (i1!=i2&i1!=i3&i2!=i3)
-                        System.out.println(text[i1]+text[i2]+text[i3]);
+                    if (i1 != i2 & i1 != i3 & i2 != i3)
+                        System.out.println(text[i1] + text[i2] + text[i3]);
                 }
             }
         }
-        *//*
+     */
+
+        int qw = 5;
+        int we = 6;
+        int er = qw + we;
+
+        System.out.print(er);
+    }
+}
+        /*
         //7
         *//* Таблица умножения
        Выведи на экран таблицу умножения 10 на 10 в следующем виде:
@@ -158,7 +170,7 @@ public class JavaRash {
 
 
         //9
-
+/*
         String rainbow[] = {"красный", "оранжевый", "желтый", "зеленый", "голубой", "синий", "фиолетовый"};
         String rainbow1[] = {"КРАСНЫЙ", "ОРАНЖЕВЫЙ", "ЖЕЛТЫЙ", "ЗЕЛЕНЫЙ", "ГОЛУБОЙ", "СИНИЙ", "ФИОЛЕТОВЫЙ"};
         for (int i = 0; i < 3; i++)
@@ -185,7 +197,7 @@ public class JavaRash {
 
     }
 }
-
+*/
 
 
 
